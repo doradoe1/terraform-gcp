@@ -16,6 +16,7 @@ resource "google_compute_instance" "compute-instance" {
   network_interface {
     network = "${google_compute_network.vpc-network.self_link}"
   }
+  metadata_startup_script = "${file("./startup.sh")}"
   allow_stopping_for_update = "true"
 }
 
