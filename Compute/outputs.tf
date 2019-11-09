@@ -1,6 +1,6 @@
-output "name" {
-  value       = "value"
-  description = ""
-  # sensitive   = "true/false"
+output "ip" {
+  value = "${google_compute_instance.nodejs-1.network_interface.0.access_config.0.nat_ip}"
 }
+
+
 
